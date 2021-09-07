@@ -7,29 +7,66 @@
 
 //РЕШЕНИЕ
 
-let input = " ";
+// let input = "";
+// const numbers = [];
+// let total = 0;
+// do {
+//   input = prompt("Введите число:");
+
+//   if (Number.isNaN(Number(input))) {
+//     alert("Было введено не число, попробуйте еще раз");
+//     continue;
+//   }
+
+//   numbers.push(Number(input));
+// } while (input !== null);
+
+// // if (numbers.length === 0) {
+// //     alert("Массив пустой");
+// // }
+
+// // for (const element of numbers) {
+// //   total += element;
+// //   console.log("Общая сумма чисел: ", total);
+// // }
+
+// if (numbers.length === 1) {
+//   alert("Ничего не введено");
+// } else {
+//   for (const number of numbers) {
+//     total += number;
+//   }
+//   console.log(`Общая сумма чисел равна ${total}`);
+// }
+
+// const array = [];
+// console.log(numbers);
+
+let input = "";
 const numbers = [];
 let total = 0;
+
 do {
   input = prompt("Введите число:");
 
-  if (Number.isNaN(Number(input))) {
+  if (input === null) {
+    break;
+  } else if (Number.isNaN(Number(input))) {
     alert("Было введено не число, попробуйте еще раз");
+    continue;
+  } else if (input === "") {
+    alert("Вы ничего не ввели");
     continue;
   }
 
   numbers.push(Number(input));
 } while (input !== null);
 
-const addInputNumbers = function (numbersArray) {
-  if (numbersArray.length === 0) {
-    return null;
+if (numbers.length === 0) {
+  alert("Сложение чисел не проведено");
+} else {
+  for (const number of numbers) {
+    total += number;
   }
-  for (const element of numbersArray) {
-    total += element;
-  }
-
-  return total;
-};
-
-console.log("Общая сумма чисел: ", addInputNumbers(numbers));
+  alert(`Сумма введенных чисел: ${total}`);
+}
