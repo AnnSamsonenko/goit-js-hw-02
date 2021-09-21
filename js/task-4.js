@@ -7,7 +7,7 @@
 
 //РЕШЕНИЕ
 
-const formatString = function (string) {
+const formatString = (string) => {
   if (string.length > 40) {
     return string.slice(0, 40) + "...";
   }

@@ -4,14 +4,12 @@
 
 //РЕШЕНИЕ
 
-const checkForSpam = function (message) {
-  if (
-    message.toLowerCase().includes("spam") ||
-    message.toLowerCase().includes("sale")
-  ) {
-    return true;
-  }
-  return false;
+const checkForSpam = (message) => {
+  const wordsArray = message.toLowerCase().split(" ");
+
+  return wordsArray.some(
+    (string) => string.includes("spam") || string.includes("sale")
+  );
 };
 
 console.log(checkForSpam("Latest technology news")); // false

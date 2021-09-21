@@ -26,21 +26,21 @@
 
 const logins = ["Mango", "robotGoogles", "Poly", "Aj4x1sBozz", "qwerty123"];
 
-const isLoginValid = function (login) {
+const isLoginValid = (login) => {
   if (login.length >= 4 && login.length <= 16) {
     return true;
   }
   return false;
 };
 
-const isLoginUnique = function (allLogins, login) {
+const isLoginUnique = (allLogins, login) => {
   if (allLogins.includes(login)) {
     return false;
   }
   return true;
 };
 
-const addLogin = function (allLogins, login) {
+const addLogin = (allLogins, login) => {
   if (isLoginValid(login)) {
     if (isLoginUnique(allLogins, login)) {
       logins.push(login);

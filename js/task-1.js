@@ -5,10 +5,8 @@
 // Нумерация должна начинаться с 1. К примеру для первого элемента массива ['Mango', 'Poly', 'Ajax'] с индексом 0 будет выведено '1 - Mango', а для индекса 2 выведет '3 - Ajax'.
 
 //РЕШЕНИЕ
-const logItems = function (array) {
-  for (let i = 1; i < array.length; i += 1) {
-    console.log(`${i} - ${array[i]}`);
-  }
+const logItems = (array) => {
+  array.forEach((item, index) => console.log(`${index + 1} : ${item} `));
 };
 
 logItems(["Mango", "Poly", "Ajax", "Lux", "Jay", "Kong"]);
